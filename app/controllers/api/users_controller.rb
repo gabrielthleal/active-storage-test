@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
     user = User.new(create_params)
 
     if user.save
-      debugger
       render json: success_json(user), status: :created
     else
       render json: error_json(user), status: :unprocessable_entity
